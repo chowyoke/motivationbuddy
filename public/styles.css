@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -84,14 +88,16 @@ input[type="time"] {
 }
 
 button[type="submit"] {
-  padding: 10px 30px;
+  padding: 10px;
   font-size: 1em;
   color: #fff;
   background-color: #a9446e;
-  border: none;
+  border: 1px solid #a9446e;
   border-radius: 5px;
+  margin-bottom: 20px; 
   cursor: pointer;
   margin-top: 10px;
+  width: 250px;
 }
 
 button[type="submit"]:hover {
