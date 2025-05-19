@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <title>Motivation Buddy Sign Up Form</title>
+      <link rel="stylesheet" href="/styles.css">
+
+<!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJH1ZJR0FM"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DJH1ZJR0FM');
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Motivation Buddy Sign Up Form</h1>
+        <p class="signup-encouragement">
+            Stay motivated and positive for yourself and your loved ones. You’re just one step away - sign up now!
+        </p>
+    
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label>Select your interest areas to receive personalised messages:</label>      
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="interest-foodie" name="interests" value="Foodie">
+                    <label for="interest-foodie">Foodie</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="interest-sports" name="interests" value="Sports and Fitness">
+                    <label for="interest-sports">Sports and Fitness</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="interest-travelling" name="interests" value="Travelling">
+                    <label for="interest-travelling">Travelling</label>
+                </div>
+            </div>
+            <p style="font-size:0.80em; color:#000000; margin-top:8px; margin-bottom:30px;">
+                In this initial release, you can select up to 3 interest areas.
+            </p>
+    
+            <label>Choose up to 3 timings to receive your message daily:</label>
+            <input type="time" id="message-time1" name="message-time1">
+            <input type="time" id="message-time2" name="message-time2">
+            <input type="time" id="message-time3" name="message-time3">
+            <p style="font-size:0.80em; color:#000000; margin-top:8px;">
+                In this initial release, you can select up to 3 timings to receive motivational messages.
+            </p>
+    
+            <button type="submit" id="subscribe-btn">Subscribe</button>
+    
+            <span id="formValidationMsg" class="validation-msg" aria-live="polite"></span>
+        </form>
+
+        <% if (typeof msg !== 'undefined') { %>
+        <div class="server-msg" style="color:<%= color %>;margin-top:10px;text-align:center;">
+            <%= msg %>
+        </div>
+        <% } %>
+    </div>
+
+    <% if (typeof signup_code !== 'undefined' && signup_code) { %>
+        <div class="server-msg" style="margin-top:10px;text-align:center;">
+            <strong>Your unique code:</strong>
+            <div style="font-size:1.6em; margin:10px 0; color:#a9446e;"><%= signup_code %></div>
+            <div>
+                <a href="https://t.me/MyMotivationBuddy_Bot" target="_blank" style="color:#2a7ae2;">Click here to open the Telegram bot</a><br>
+                and send the code above to complete your registration.
+            </div>
+        </div>
+    <% } %>
+
+    <div id="signupCodeBox"></div>
+
+    <div class="description-box">
+        <h2>Why Sign Up?</h2>
+        <h3>Drives Productivity and Efficiency</h3>
+        <p>You can approach tasks with confidence and focus.</p>
+        <h3>Stay Motivated, Stay Ahead</h3>
+        <p>Daily motivation delivered straight to you</p>
+        <h3>Boost your Drive</h3>
+        <p>Empower your day with positive reminders</p>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

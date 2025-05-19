@@ -1,0 +1,27 @@
+{
+  "name": "motivation-buddy",
+  "version": "1.0.0",
+  "description": "Motivation Buddy web app with Telegram integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "luxon": "^3.6.1",
+    "node-cron": "^4.0.5",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "prisma": "^6.8.2"
+  },
+  "keywords": [
+    "motivation",
+    "telegram"
+  ],
+  "author": "cy"
+}
