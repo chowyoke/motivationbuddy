@@ -79,7 +79,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
     // Show the code and Telegram link
     if (data.signup_code) {
       signupCodeBox.innerHTML = `
-        <div class="server-msg" style="margin-top:10px;text-align:center;">
+        <div class="server-msg">
           <strong>Your unique code:</strong>
           <div style="font-size:1.6em; margin:10px 0; color:#a9446e;">${data.signup_code}</div>
           <div>
@@ -88,6 +88,14 @@ document.getElementById('signup-form').addEventListener('submit', async function
           </div>
         </div>
       `;
+      // Confetti!
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+      // Scroll to the code box
+      document.getElementById('signupCodeBox').scrollIntoView({ behavior: "smooth", block: "center" });
     } else {
         signupCodeBox.innerHTML = '';
       }

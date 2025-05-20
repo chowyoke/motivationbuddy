@@ -73,10 +73,10 @@ bot.on(message('text'), async (ctx) => {
                 await ctx.reply("I have retrieved your sign up details. I will be sending you messages to uplift your spirits at the timings you have indicated!");
             } else {
                 await ctx.reply('Invalid code. Please enter again.');
-            }
+              }
         } else {
         await ctx.reply('Please enter your 6-character code.');
-        }
+          }
     } catch (err) {
         console.error('Bot error:', err);
         await ctx.reply('An error occurred. Please try again later.');
@@ -142,6 +142,7 @@ cron.schedule('* * * * *', async () => {
                 }
               }
             );
+            // check this - console.log('Sending to chat_id:', user.telegram_chat_id);
             console.log(`[Cron] Message sent to ${user.telegram_username} (chat_id: ${user.telegram_chat_id})`);
         } else {
             await bot.telegram.sendMessage(user.telegram_chat_id.toString(), "Stay motivated! (No interests available)");
@@ -153,7 +154,7 @@ cron.schedule('* * * * *', async () => {
       }
     } else {
       console.log(`[Cron] No telegram_chat_id for user ${user.name}`);
-    }
+      }
   } 
 });
   

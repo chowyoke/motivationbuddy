@@ -62,7 +62,7 @@ app.post('/subscribe', async function(req, res) {
             // Else, render EJS
             return res.render('index', {msg : "Subscription has been added successfully! Please copy your unique code below, then click the Telegram bot link and send this code to the bot to complete your registration.", color: "green",
   signup_code });          
-        }
+            }
     } catch (error) {
         console.log(error);
         if (req.headers['content-type'] === 'application/json') {
