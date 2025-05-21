@@ -24,6 +24,21 @@ body {
   margin-top: 60px;
 }
 
+.container .bounce-arrow {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+  font-size: 1.2em;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 #title {                     /* Refers to the line Motivation Buddy */
   text-align: center;
   margin-bottom: 30px;
@@ -90,7 +105,7 @@ button[type="submit"] {
   font-size: 1em;
   color: #fff;
   background: linear-gradient(90deg, #a9446e 0%, #ff7eb3 100%);
-  border: none;              /* Remove the solid border for a modern look */
+  border: none; 
   border-radius: 5px;
   margin-bottom: 20px; 
   cursor: pointer;
@@ -140,7 +155,7 @@ button[type="submit"]:hover {
 }
 
 .server-msg {                /* Refers to the line Your unique code */
-  width: 100%;               /* Make success and failure stretch full form width */
+  width: 100%;               /* Stretch full form width */
   margin-top: 5px;
   text-align: center;
   box-sizing: border-box;
@@ -150,14 +165,36 @@ button[type="submit"]:hover {
 .description-box {
   width: 100%;
   background-color: #ffe4ec;
-  padding: 8px 10px;
+  padding: 16px 28px;
   box-sizing: border-box;
-  left: 0;
-  text-align: center;
+  text-align: left;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(169, 68, 110, 0.08);
+  margin-top: 40px;
+}
+
+.description-box h2 {
+  font-size: 1.08em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #a9446e;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .description-box p {
-  margin: 0;
-  color: #a9446e;
-  font-size: 1.1em;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  font-size: 0.9em;
+}
+
+.description-box .highlight {
+  color: #d72660;
+  font-weight: bold;
+}
+
+.description-box .disclaimer {
+  font-size: 0.7em;
+  color: #666666;
+  margin-top: 20px;
 }
