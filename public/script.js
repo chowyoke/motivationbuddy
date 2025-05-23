@@ -1,6 +1,8 @@
 document.getElementById('signup-form').addEventListener('submit', async function(e) {
   e.preventDefault();
 
+  // AJAX logic. Stops the browser from performing the default form submission (i.e., the page does not reload)
+  // Use JavaScript (AJAX) to send the form data to the server in the background
   const name = document.getElementById('name').value.trim();
   const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
   const messageTime1 = document.getElementById('message-time1').value;
@@ -60,7 +62,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
   };
 
   try {
-    // Send data to your backend (replace '/subscribe' with your actual endpoint)
+    // Send data to backend
     const response = await fetch('/subscribe', {
       method: 'POST',
       headers: {
@@ -84,7 +86,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
           <div style="font-size:1.6em; margin:10px 0; color:#a9446e;">${data.signup_code}</div>
           <div>
             <a href="https://t.me/MyMotivationBuddy_Bot" target="_blank" style="color:#2a7ae2;">Click here to open the Telegram bot</a><br>
-              and send the code above to complete your registration.
+              and send the code above to start receiving messages.
           </div>
         </div>
       `;

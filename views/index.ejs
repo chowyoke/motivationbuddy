@@ -23,6 +23,7 @@
             🔋 Start every day with a boost of positivity delivered right to your phone.<br>You’re just one step away - sign up now! <span class="bounce-arrow">⬇️</span>
         </p>
     
+        <%# kiv adding action and method attributes to cater to normal form submission when Javascript (AJAX) is not available. %>
         <form id="signup-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -74,7 +75,7 @@
             <div style="font-size:1.6em; margin:10px 0; color:#a9446e;"><%= signup_code %></div>
             <div>
                 <a href="https://t.me/MyMotivationBuddy_Bot" target="_blank" style="color:#2a7ae2;">Click here to open the Telegram bot</a><br>
-                and send the code above to complete your registration.
+                and send the code above to start receiving messages.
             </div>
         </div>
     <% } %>
@@ -87,7 +88,7 @@
         <p>Get uplifting messages at your chosen times, helping you stay inspired every day.</p>
         
         <h2>Story Behind Motivation Buddy</h2>
-        <p>Did you know over 40% of workers in Singapore struggle to stay motivated?</p>
+        <p>Do you know that over 40% of workers in Singapore struggle to stay motivated?</p>
         <p>Many face these challenges alone. We created Motivation Buddy to offer positive reminders and real support.</p>
 
         <h2>How It Works</h2>

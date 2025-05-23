@@ -14,7 +14,7 @@ bot.start((ctx) => {
 });
 
 // Catch-all handler for debugging
-// may want to remove or limit the catch-all handler in production to avoid excessive logs.
+// May want to remove or limit the catch-all handler in future to avoid excessive logs.
 bot.on('message', async (ctx, next) => {
   console.log('Catch-all: Received any message:', ctx.message.text);
   await next(); // Pass control to the next matching handler
@@ -50,8 +50,7 @@ bot.on(message('text'), async (ctx) => {
             const user = await prisma.post.findFirst({ where: { signup_code: code } });
             console.log('Looked up code:', code, 'User found:', !!user);
 
-            // Check if this Telegram user is already linked to a record
-            
+            // Check if this Telegram user is already linked to a record            
             const existingTelegramUser = await prisma.post.findFirst({
                 where: { telegram_chat_id: ctx.chat.id }
             });
@@ -164,7 +163,7 @@ bot.on('callback_query', async (ctx) => {
     // Example data: "like_5_12" or "dislike_5_12"
     const [action, userId, messageId] = data.split('_');
     
-    // Store feedback in your database
+    // Store feedback in database
     await prisma.feedback.create({
       data: {
         userId: Number(userId),
@@ -192,4 +191,3 @@ bot.on('callback_query', async (ctx) => {
 
 bot.launch().then(() => console.log('Bot is running...'));
 
-// to add a model to work on feedback in future

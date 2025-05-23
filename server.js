@@ -42,10 +42,17 @@ app.post('/subscribe', async function(req, res) {
         if (!name || !message_times || message_times.length === 0) {
             // If AJAX, send JSON error
             if (req.headers['content-type'] === 'application/json') {
-                return res.status(400).json({ msg: "Please fill out all fields.", color: "#d9534f" });
+                return res.status(400).json({ 
+                    msg: "Please fill out all fields.", 
+                    color: "#d9534f" 
+                });
             }
             // Else, render EJS
-            return res.render('index', { msg : "Please fill out all fields.", color: "#d9534f", signup_code: null });
+            return res.render('index', { 
+                msg : "Please fill out all fields.", 
+                color: "#d9534f", 
+                signup_code: null 
+            });
         } else {
             const signup_code = generateSignupCode(6);
             await prisma.post.create({
@@ -54,14 +61,17 @@ app.post('/subscribe', async function(req, res) {
             // If AJAX, send JSON with code
             if (req.headers['content-type'] === 'application/json') {
                 return res.json({
-                    msg: "Subscription has been added successfully! Please copy your unique code below, then click the Telegram bot link and send this code to the bot to complete your registration.",
+                    msg: "Subscription has been added successfully! Please copy your unique code below, then click the Telegram bot link and send this code to the bot to start receiving messages.",
                     color: "green",
                     signup_code
                 });
             }
             // Else, render EJS
-            return res.render('index', {msg : "Subscription has been added successfully! Please copy your unique code below, then click the Telegram bot link and send this code to the bot to complete your registration.", color: "green",
-  signup_code });          
+            return res.render('index', {
+                msg : "Subscription has been added successfully! Please copy your unique code below, then click the Telegram bot link and send this code to the bot to start receiving messages.", 
+                color: "green",
+                signup_code 
+            });          
             }
     } catch (error) {
         console.log(error);

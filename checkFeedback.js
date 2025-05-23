@@ -2,18 +2,17 @@ const { PrismaClient } = require('./generated/prisma');
 const prisma = new PrismaClient();
 
 async function main() {
-    // Get all feedbacks (filter for dislikes)
-    const feedbacks = await prisma.feedback.findMany({
+    // Get all feedback (filter for dislikes)
+    const feedbacks = await prisma.feedback.findMany({    // Queries the feedback table
         where: {
-        feedback: 'dislike', // Only show dislikes; remove this line to see all
+        feedback: 'dislike',                              // Only show dislikes; remove this line to see all
         },
         include: {
-        user: true,    // Include user info (Post model)
-        // message: true, // Include message info
+        user: true,                                       // Query will also fetch the related user info for each feedback info
         }
     });
 
-    console.dir(feedbacks, { depth: null });
+    console.dir(feedbacks, { depth: null });              // Prints the full details of the feedbacks (including nested user info) to the console
 }
 
 main()
@@ -23,5 +22,3 @@ main()
   })
   .finally(() => prisma.$disconnect());
 
-  // use node checkFeedback.js to print all feedback records in the terminal
-  // use npx prisma studio to check feedback against user and message

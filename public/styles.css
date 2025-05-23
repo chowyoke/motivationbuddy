@@ -61,7 +61,7 @@ form {
 }
 
 #signup-form {               /* Starts from name */
-  width: 100%;
+  width: 100%;               /* Stretch full form width */
   max-width: 500px;
   box-sizing: border-box;
 }
@@ -123,7 +123,7 @@ button[type="submit"]:hover {
 .validation-msg {
   display: none;             /* Hide by default */
   text-align: center;
-  width: 100%;               /* Make button stretch full form width */
+  width: 100%;               /* Stretch full form width */
 }
 
 .validation-msg.active {
@@ -163,7 +163,7 @@ button[type="submit"]:hover {
 }
 
 .description-box {
-  width: 100%;
+  width: 100%;               /* Stretch full form width */
   background-color: #ffe4ec;
   padding: 16px 28px;
   box-sizing: border-box;
